@@ -30,4 +30,10 @@ body {
   width: 100vw;
   min-height: 100dvh;
   font-family: "Plus Jakarta Sans", sans-serif;
+  &:has(.expand-menu) {
+    overflow: hidden;
+  }
+}
+
+.container {
 }

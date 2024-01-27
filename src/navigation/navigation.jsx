@@ -67,8 +67,23 @@ export const Header = ({ title, date, name, email, width }) => {
   return (
     <div className="header">
       <div className="header-first">
-        <span class="material-symbols-outlined">more_vert</span>
-        <div className="header-title">{title}</div>
+        <span
+          class="material-symbols-outlined"
+          onClick={(e) => {
+            e.currentTarget.parentElement.parentElement.parentElement.children[1].classList.toggle(
+              "expand-menu"
+            );
+            e.currentTarget.parentElement.parentElement.parentElement.children[0].classList.toggle(
+              "expand-header"
+            );
+            // e.currentTarget.parentElement.parentElement.parentElement.children[0].classList.toggle(
+            //   "expand-menu"
+            // );
+          }}
+        >
+          more_vert
+        </span>
+        <div className="header-title">{width > 0 && title}</div>
         <div
           className={`header-search ${
             width < 600 ? searchText.length < 1 && "expand-search" : ""
@@ -93,18 +108,22 @@ export const Header = ({ title, date, name, email, width }) => {
         <div className="header-notification">
           <Bell />
         </div>
-        <ProfileCard name={name} email={email} />
+        <ProfileCard name={name} email={email} width={width} />
       </div>
     </div>
   );
 };
 
-export const ProfileCard = ({ name, email }) => {
+export const ProfileCard = ({ name, email, width }) => {
   return (
     <div className="profile">
       <div className="profile-image"></div>
-      <div className="profile-name">{name}</div>
-      <div className="profile-mail">{email}</div>
+      {(width > 920 || width <= 540) && (
+        <>
+          <div className="profile-name">{name}</div>
+          <div className="profile-mail">{email}</div>
+        </>
+      )}
       <div className="profile-dropdown">
         <ArrowDown />
       </div>
@@ -124,7 +143,7 @@ export const Menu = ({ width }) => {
       <div className="menu-top">
         <span
           className={`menu-top-indicator ${activeMenu < 6 ? "indicate" : ""}`}
-          style={{ top: `calc(112px + ${activeMenu * 53.5}px)` }}
+          style={{ top: `calc(112px + ${activeMenu * 54.5}px)` }}
         ></span>
         <DashboardIcon
           active={activeMenu}
