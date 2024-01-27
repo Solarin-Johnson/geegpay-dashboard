@@ -40,21 +40,20 @@ export default function Navigation() {
         title={"Dashboard"}
         date={[todaysDate, todaysShortDate]}
         width={windowWidth}
+        name={"John Doe"}
+        email={"Johndoe@example.com"}
       />
       <Menu />
     </>
   );
 }
 
-export const Menu = () => {
-  return;
-};
-
 export const Header = ({ title, date, name, email, width }) => {
   const [searchText, setSearchText] = useState("");
   return (
     <div className="header">
       <div className="header-first">
+        <span class="material-symbols-outlined">more_vert</span>
         <div className="header-title">{title}</div>
         <div
           className={`header-search ${
@@ -89,10 +88,14 @@ export const Header = ({ title, date, name, email, width }) => {
 export const ProfileCard = ({ name, email }) => {
   return (
     <div className="profile">
-      <div className="profile-picture"></div>
+      <div className="profile-image"></div>
       <div className="profile-name">{name}</div>
       <div className="profile-mail">{email}</div>
       <div className="profile-dropdown">{<ArrowDown />}</div>
     </div>
   );
+};
+
+export const Menu = () => {
+  return <div className="menu"></div>;
 };
