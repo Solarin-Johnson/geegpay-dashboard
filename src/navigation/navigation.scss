@@ -132,11 +132,12 @@
     align-items: center;
     justify-content: center;
     justify-self: center;
+    cursor: pointer;
   }
   &-second {
     justify-self: center;
     &:last-child {
-      width: 100%;
+      width: auto;
       max-width: 400px;
     }
   }
@@ -192,6 +193,7 @@
     grid-area: arrow;
     justify-self: center;
     padding-right: clamp(0px, 1.2vw, 8px);
+    cursor: pointer;
   }
 }
 

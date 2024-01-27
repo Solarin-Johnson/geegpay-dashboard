@@ -91,7 +91,9 @@ export const ProfileCard = ({ name, email }) => {
       <div className="profile-image"></div>
       <div className="profile-name">{name}</div>
       <div className="profile-mail">{email}</div>
-      <div className="profile-dropdown">{<ArrowDown />}</div>
+      <div className="profile-dropdown">
+        <ArrowDown />
+      </div>
     </div>
   );
 };
