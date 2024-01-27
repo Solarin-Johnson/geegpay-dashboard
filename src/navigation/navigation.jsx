@@ -1,9 +1,23 @@
 import "./navigation.scss";
+import { useEffect, useState } from "react";
 import { ReactComponent as SearchIcon } from "./../images/header/search-icon.svg";
 import { ReactComponent as Calender } from "./../images/header/calender.svg";
 import { ReactComponent as ArrowDown } from "./../images/header/arrow-down.svg";
 import { ReactComponent as Bell } from "./../images/header/bell.svg";
-import { useEffect, useState } from "react";
+import { ReactComponent as Logo } from "./../images/menu/logo.svg";
+import {
+  DashboardIcon,
+  MenuIcon2,
+  MenuIcon3,
+  MenuIcon4,
+  MenuIcon5,
+  MenuIcon6,
+  MenuIcon7,
+  MenuIcon8,
+  MenuIcon9,
+  ModeIconDark,
+  ModeIconLight,
+} from "./MenuIcons";
 
 export default function Navigation() {
   const today = new Date();
@@ -43,7 +57,7 @@ export default function Navigation() {
         name={"John Doe"}
         email={"Johndoe@example.com"}
       />
-      <Menu />
+      <Menu width={windowWidth} />
     </>
   );
 }
@@ -98,6 +112,75 @@ export const ProfileCard = ({ name, email }) => {
   );
 };
 
-export const Menu = () => {
-  return <div className="menu"></div>;
+export const Menu = ({ width }) => {
+  const [activeMenu, setActiveMenu] = useState(0);
+  const [mode, setMode] = useState("light");
+
+  return (
+    <div className="menu">
+      <div className="logo">
+        <Logo />
+      </div>
+      <div className="menu-top">
+        <span
+          className={`menu-top-indicator ${activeMenu < 6 ? "indicate" : ""}`}
+          style={{ top: `calc(112px + ${activeMenu * 53.5}px)` }}
+        ></span>
+        <DashboardIcon
+          active={activeMenu}
+          setActiveMenu={(data) => setActiveMenu(data)}
+          i={0}
+        />
+        <MenuIcon2
+          active={activeMenu}
+          setActiveMenu={(data) => setActiveMenu(data)}
+          i={1}
+        />
+        <MenuIcon3
+          active={activeMenu}
+          setActiveMenu={(data) => setActiveMenu(data)}
+          i={2}
+        />
+        <MenuIcon4
+          active={activeMenu}
+          setActiveMenu={(data) => setActiveMenu(data)}
+          i={3}
+        />
+        <MenuIcon5
+          active={activeMenu}
+          setActiveMenu={(data) => setActiveMenu(data)}
+          i={4}
+        />
+        <MenuIcon6
+          active={activeMenu}
+          setActiveMenu={(data) => setActiveMenu(data)}
+          i={5}
+        />
+      </div>
+      <div className="menu-mode">
+        <span
+          className={`menu-mode-toggle ${mode === "dark" ? "down" : "up"}`}
+        ></span>
+        <ModeIconLight mode={mode} setMode={(data) => setMode(data)} />
+        <ModeIconDark mode={mode} setMode={(data) => setMode(data)} />
+      </div>
+      <div className="menu-bottom">
+        <MenuIcon7
+          active={activeMenu}
+          setActiveMenu={(data) => setActiveMenu(data)}
+          i={6}
+        />
+        <MenuIcon8
+          active={activeMenu}
+          setActiveMenu={(data) => setActiveMenu(data)}
+          i={7}
+        />
+        <MenuIcon9
+          active={activeMenu}
+          setActiveMenu={(data) => setActiveMenu(data)}
+          i={8}
+        />
+      </div>
+    </div>
+  );
 };
