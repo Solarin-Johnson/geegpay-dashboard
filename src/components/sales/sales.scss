@@ -1,0 +1,23 @@
+.sales {
+  position: relative;
+  &-head {
+    font-weight: 500;
+    display: grid;
+    > :first-child {
+      font-weight: 600;
+      font-size: 16px;
+    }
+    > :last-child {
+      font-size: 14px;
+      display: grid;
+      grid-template-columns: repeat(2, auto);
+      //   column-gap: 5px;
+    //   padding: 0 20px;
+    }
+  }
+  &-select {
+  }
+  &-options {
+    display: none;
+  }
+}

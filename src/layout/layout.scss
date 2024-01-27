@@ -1,0 +1,55 @@
+:root {
+  --content-left: 80px;
+  --content-areas: "sales sales sales sales sales  total total total total"
+    "order order order order order  report report report report";
+  --content-height: 700px;
+  --content-columns: repeat(9, auto);
+  --content-rows: repeat(2, 1fr);
+}
+.content {
+  height: 100dvh;
+  min-height: var(--content-height);
+  padding: 20px;
+  padding-left: calc(var(--content-left) + 20px);
+  padding-top: calc(var(--header-height) + 20px);
+  background-color: var(--bg-color);
+  display: grid;
+
+  grid-template-areas: var(--content-areas);
+}
+.sales {
+  grid-area: sales;
+  display: grid;
+}
+
+.div-container {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  grid-template-columns: 1fr;
+  background-color: var(--accent);
+  border: 1px solid #7f7f7f40;
+  border-radius: 10px;
+  padding: 15px;
+  width: calc(100% - 30px);
+  max-width: calc(100% - 30px);
+  grid-template-rows: var(--content-rows);
+  grid-template-rows: var(--content-columns);
+  > :first-child {
+    color: var(--text);
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+
+    > :last-child {
+      justify-self: end;
+    }
+  }
+}
+
+@media screen and (max-width: 920px) {
+  :root {
+    --content-areas: "sales" "total" "order" "order";
+    --content-height: 1240px;
+    --content-rows: repeat(4, 1fr);
+    --content-columns: auto;
+  }
+}

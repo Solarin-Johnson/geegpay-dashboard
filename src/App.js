@@ -1,10 +1,12 @@
 import './App.scss';
+import Layout from './layout';
 import Navigation from './navigation/navigation';
 
 function App() {
   return (
     <div className="container">
       <Navigation />
+      <Layout />
     </div>
   );
 }
