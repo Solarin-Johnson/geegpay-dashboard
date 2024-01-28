@@ -3,7 +3,7 @@
   --header-columns: 1fr auto;
   --header-rows: 1fr;
   --header-padding: clamp(10px, 2vw, 50px);
-  --header-left: calc(var(--header-padding) - 30px);
+  --header-left: calc(var(--header-padding) - 25px);
   --search-width: auto;
   --search-padding: 12px;
   --notif-size: 20px;
@@ -14,6 +14,7 @@
 }
 .header {
   position: fixed;
+  z-index: 100;
   left: 0;
   top: 0;
   height: var(--header-height);
@@ -37,9 +38,10 @@
   }
 
   &-second {
-    column-gap: 15px;
+    column-gap: 10%;
     display: grid;
-    grid-template-columns: repeat(2, auto);
+    grid-template-columns: 10% 84%;
+    justify-content: space-around;
     align-items: center;
     align-content: center;
   }
@@ -177,7 +179,7 @@
   padding: calc(var(--search-padding) - 5px);
   border-radius: 10rem;
   text-align: center;
-  font-size: 15px;
+  font-size: clamp(12px, 1.5vw, 15px);
   column-gap: 2px;
   &-image {
     grid-area: image;
@@ -209,6 +211,7 @@
 .menu {
   overflow: auto;
   position: fixed;
+  z-index: 100;
   top: 0;
   left: 0;
   transform: translateX(var(--menu-left));

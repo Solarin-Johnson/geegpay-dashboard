@@ -76,6 +76,9 @@ export const Header = ({ title, date, name, email, width }) => {
             e.currentTarget.parentElement.parentElement.parentElement.children[0].classList.toggle(
               "expand-header"
             );
+            e.currentTarget.parentElement.parentElement.parentElement.children[2].classList.toggle(
+              "expand-header"
+            );
             // e.currentTarget.parentElement.parentElement.parentElement.children[0].classList.toggle(
             //   "expand-menu"
             // );

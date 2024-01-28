@@ -8,7 +8,13 @@ export default function Sales() {
         <span>Sales Trend</span>
         <div>
           <span>Sort by:</span>
-          <Select />
+          <label htmlFor="sort">
+            <select name="sort" id="sort">
+              <option value="weekly">Weekly</option>
+              <option value="monthly">Monthly</option>
+              <option value="yearly">Yearly</option>
+            </select>
+          </label>
         </div>
       </div>
       <Chart />
