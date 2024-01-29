@@ -23,14 +23,6 @@
   grid-gap: 40px;
   grid-template-areas: var(--content-areas);
 }
-.sales {
-  grid-area: sales;
-  display: grid;
-}
-.order {
-  grid-area: order;
-  display: grid;
-}
 
 .div-container {
   display: grid;
@@ -53,11 +45,24 @@
     }
   }
 }
+.sales {
+  grid-area: sales;
+  display: grid;
+}
+.order {
+  grid-area: order;
+  display: grid;
+}
+.total {
+  grid-area: total;
+  border: none;
+  background-color: transparent;
+}
 
 @media screen and (max-width: 920px) {
   :root {
     --content-areas: "sales" "total" "order" "report";
-    --content-height: 1640px;
+    --content-height: 2556px;
     --content-rows: repeat(5, 1fr);
     --content-columns: 1fr;
     --content-container-height: auto;
