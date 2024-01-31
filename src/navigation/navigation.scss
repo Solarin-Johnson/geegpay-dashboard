@@ -10,6 +10,7 @@
   --menu-size: 88px;
   --menu-left: 0;
   --float-date: 8vw;
+  --second-gap: 10%;
   //   --full
 }
 .header {
@@ -25,7 +26,7 @@
   grid-template-columns: var(--header-columns);
   grid-template-rows: var(--header-rows);
   //   row-gap: 20px;
-  column-gap: 15px;
+  column-gap: 50px;
   border-bottom: 1px solid #7f7f7f40;
   transition: 0.2s ease-in-out;
 
@@ -38,7 +39,7 @@
   }
 
   &-second {
-    column-gap: 10%;
+    column-gap: var(--second-gap);
     display: grid;
     grid-template-columns: 10% 84%;
     justify-content: space-around;
@@ -169,9 +170,12 @@
 }
 
 .profile {
+  width: auto;
+  justify-self: start;
   display: grid;
   align-items: center;
   //   background-color: red;
+  grid-template-columns: repeat(5, auto);
   grid-template-areas:
     "image name name name name arrow"
     "image mail mail mail mail arrow";
@@ -359,23 +363,23 @@
   :root {
     --header-padding: clamp(15px, 3vw, 25px);
     --header-left: var(--header-padding);
-    --search-width: 110px;
+    --search-width: 200px;
     --search-padding: 10px;
     --notif-size: 30px;
     --menu-size: auto;
     --menu-left: -80px;
     --float-date: 15vw;
     --content-left: 0px;
+    --second-gap: 30px;
   }
 }
 
 @media screen and (max-width: 540px) {
   :root {
-    --search-width: 170px;
     --header-height: 150px;
     --header-columns: 1fr;
     --header-rows: repeat(2, 1fr);
-    --search-width: 110px;
+    --search-width: calc(100vw - 100px);
     --float-date: 5vw;
   }
 }

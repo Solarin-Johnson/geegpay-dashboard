@@ -102,7 +102,7 @@ export const Header = ({ title, date, name, email, width }) => {
         </div>
         <div className="header-date">
           <Calender />
-          <span className={width < 600 ? "float-date" : ""}>
+          <span className={width < 840 ? "float-date" : ""}>
             {width > 500 ? date[0] : date[1]}
           </span>
         </div>
