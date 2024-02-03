@@ -10,6 +10,8 @@ body {
   --menu-color-alt: #b2abab;
   --success: 52, 203, 165;
   --error: 237, 84, 78;
+  --success-graph: #66c87b;
+  --error-graph: #ed544e;
 
   // Dark-mode
 
@@ -21,7 +23,7 @@ body {
   //   --primary: #34caa5;
   //   --secondary: #0d062d;
   //   --menu-color: #d8d4e9ee;
-  --menu-alt-color: #b2abab;
+  // --menu-alt-color: #b2abab;
 }
 body.dark-mode {
 }
