@@ -33,5 +33,9 @@
     padding-top: 10px;
     height: auto;
     overflow-x: auto;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 }

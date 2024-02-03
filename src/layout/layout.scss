@@ -58,13 +58,17 @@
   border: none;
   background-color: transparent;
 }
+.report {
+  grid-area: report;
+  display: grid;
+}
 
 @media screen and (max-width: 920px) {
   :root {
     --content-areas: "sales" "total" "order" "report";
-    --content-height: 2556px;
+    // --content-height: 2440px;
     --content-rows: repeat(4, auto);
     --content-columns: 1fr;
-    --content-container-height: auto;
+    --content-container-height: 450px;
   }
 }

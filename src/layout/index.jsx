@@ -1,4 +1,5 @@
 import Order from "../components/orders";
+import Report from "../components/report";
 import Sales from "../components/sales";
 import Total from "../components/total";
 import "./layout.scss";
@@ -9,6 +10,7 @@ export default function Layout() {
       <Sales />
       <Total />
       <Order />
+      <Report />
     </div>
   );
 }
