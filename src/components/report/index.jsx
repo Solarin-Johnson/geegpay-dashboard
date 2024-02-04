@@ -16,7 +16,7 @@ export default function Report() {
   ];
   return (
     <div className="report div-container">
-      <div className="report-head">
+      <div className="order-head">
         <span>Last Orders</span>
         <span>View all</span>
       </div>
