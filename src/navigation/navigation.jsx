@@ -86,7 +86,9 @@ export const Header = ({ title, date, name, email, width }) => {
         >
           more_vert
         </span>
-        <div className="header-title">{searchText.length < 1 && title}</div>
+        <div className="header-title">
+          {width < 600 ? searchText.length < 1 && title : title}
+        </div>
         <div
           className={`header-search ${
             width < 600 ? searchText.length < 1 && "expand-search" : ""

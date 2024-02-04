@@ -1,26 +1,43 @@
 import "./report.scss";
 
 export default function Report() {
-  const transactionList = [
-    ["#00D400", "Marcus Bergson", "Jan 5, 2024", "$320.00", "Successful"],
-    ["#F60000", "Evangeline Rodriguez", "Feb 12, 2024", "$500.00", "Failed"],
-    [
-      "#00D400",
-      "Christopher Harrington",
-      "Mar 18, 2024",
-      "$120.00",
-      "Successful",
-    ],
-    ["#F60000", "Isabella Montgomery", "Apr 3, 2024", "$250.00", "Failed"],
-    ["#00D400", "Nathaniel Wellington", "May 9, 2024", "$400.00", "Successful"],
+  const reportData = [
+    { name: "Book Bazaar", amount: 2500000, rate: 15, percent: 65 },
+    { name: "Artisan Aisle", amount: 1800000, rate: 10, percent: 50 },
+    { name: "Toy Troop", amount: 1200000, rate: 8, percent: 30 },
+    { name: "X Store", amount: 600000, rate: 6, percent: 30 },
   ];
   return (
     <div className="report div-container">
       <div className="order-head">
-        <span>Last Orders</span>
+        <span>Top Platform</span>
         <span>View all</span>
       </div>
-      <div className="report-table"></div>
+      <div className="report-container">
+        {reportData.map((data, i) => (
+          <ReportCard data={data} />
+        ))}
+      </div>
     </div>
   );
 }
+
+export const ReportCard = ({ data }) => {
+  let formattedAmount = new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+    maximumFractionDigits: 0,
+  }).format(data.amount);
+  return (
+    <div className="report-card">
+      <div className="card-name">{data.name}</div>
+      <div className="card-progress">
+        <span style={{ width: `${data.percent}%` }}></span>
+      </div>
+      <div className="card-details">
+        <span>{formattedAmount}</span>
+        <span>{data.rate}%</span>
+      </div>
+    </div>
+  );
+};
