@@ -1,3 +1,4 @@
+import { Icon1, Icon2, Icon3, Icon4 } from "./icons";
 import "./total.scss";
 
 export default function Total() {
@@ -34,20 +35,21 @@ export default function Total() {
   return (
     <div className="total">
       {totalData.map((data, i) => (
-        <TotalCard data={data} />
+        <TotalCard data={data} i={i} />
       ))}
     </div>
   );
 }
 
-export const TotalCard = ({ data }) => {
+export const TotalCard = ({ data, i }) => {
   // const color = data.increase ? "#77B900" : "#ED544E";
   // const strokeColor = data.increase ? "#66C87B" : "#ED544E";
   // console.log(color);
+  const iconArr = [<Icon1 />, <Icon2 />, <Icon3 />, <Icon4 />];
   return (
     <div className="total-card">
       <div className="total-card-image">
-        <span></span>
+        <span>{iconArr[i]}</span>
         <span>{(data.increase && <GraphSuccess />) || <GraphError />}</span>
       </div>
       <div className="total-card-name">{data.name}</div>
