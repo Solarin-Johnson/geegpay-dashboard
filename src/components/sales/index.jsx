@@ -1,7 +1,26 @@
 import { useMemo, useState } from "react";
 import "./sales.scss";
+import BarChart from "../chart";
 
 export default function Sales() {
+  const horiData = [
+    "jan",
+    "feb",
+    "mar",
+    "apr",
+    "may",
+    "jun",
+    "jul",
+    "aug",
+    "sep",
+    "oct",
+    "nov",
+    "dec",
+  ];
+  const chartData = [
+    6000, 14000, 9000, 16000, 14000, 27000, 11000, 20000, 15000, 23000, 17000,
+    9000,
+  ];
   return (
     <div className="sales div-container">
       <div className="sales-head">
@@ -17,7 +36,15 @@ export default function Sales() {
           </label>
         </div>
       </div>
-      <Chart />
+      {/* <Chart /> */}
+      <BarChart
+        data={{
+          vertRange: 5000,
+          rangeY: 6,
+          horizontalData: horiData,
+          barData: chartData,
+        }}
+      />
     </div>
   );
 }
