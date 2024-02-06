@@ -123,7 +123,7 @@ export const ProfileCard = ({ name, email, width }) => {
   return (
     <div className="profile">
       <div className="profile-image"></div>
-      {(width > 920 || width <= 540) && (
+      {(width > 920 || width <= 540) && width > 320 && (
         <>
           <div className="profile-name">{name}</div>
           <div className="profile-mail">{email}</div>
