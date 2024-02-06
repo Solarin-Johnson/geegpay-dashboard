@@ -94,14 +94,12 @@ export const Select = ({ data }) => {
     <div
       className="select-container"
       id={viewSet ? "show-option" : "hide-option"}
+      onClick={(e) => {
+        e.stopPropagation();
+        setViewState(!viewSet);
+      }}
     >
-      <div
-        className="select"
-        onClick={(e) => {
-          e.stopPropagation();
-          setViewState(!viewSet);
-        }}
-      >
+      <div className="select">
         <span>{data[index]}</span> <ArrowDown />
       </div>
       {viewSet && (

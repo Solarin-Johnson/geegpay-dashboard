@@ -2,10 +2,12 @@ import "./report.scss";
 
 export default function Report() {
   const reportData = [
-    { name: "Book Bazaar", amount: 2500000, rate: 15, percent: 65 },
-    { name: "Artisan Aisle", amount: 1800000, rate: 10, percent: 50 },
-    { name: "Toy Troop", amount: 1200000, rate: 8, percent: 30 },
-    { name: "X Store", amount: 600000, rate: 6, percent: 30 },
+    { name: "Book Bazaar", amount: 2500000, rate: 25, percent: 65 },
+    { name: "Artisan Aisle", amount: 1800000, rate: 21, percent: 30 },
+    { name: "Toy Troop", amount: 1200000, rate: 18, percent: 25 },
+    { name: "X Box", amount: 600000, rate: 12, percent: 55 },
+    { name: "Laundry", amount: 600000, rate: 9, percent: 35 },
+    { name: "Book Troop", amount: 600000, rate: 4, percent: 50 },
   ];
   return (
     <div className="report div-container">

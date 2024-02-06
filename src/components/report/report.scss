@@ -4,11 +4,18 @@
 .report {
   color: var(--text);
   row-gap: 20px;
+
   &-container {
+    padding: 10px 0;
     display: grid;
     overflow-y: auto;
     row-gap: 20px;
+    column-gap: 30px;
     max-height: var(--report-height);
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(clamp(280px, 500px, 30vw), 1fr)
+    );
 
     &::-webkit-scrollbar {
       display: none;
@@ -20,7 +27,7 @@
     height: 100px;
     border: 1px solid #7f7f7f40;
     border-radius: 10px;
-    padding: 10px;
+    padding: 10px 12px;
     display: grid;
     grid-template-rows: 1fr auto 1fr;
     align-content: center;
