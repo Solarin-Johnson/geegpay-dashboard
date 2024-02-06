@@ -1,4 +1,5 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+import { ReactComponent as ArrowDown } from "./../../images/header/arrow-down.svg";
 import "./sales.scss";
 import BarChart from "../chart";
 
@@ -27,13 +28,14 @@ export default function Sales() {
         <span>Sales Trend</span>
         <div>
           <span>Sort by:</span>
-          <label htmlFor="sort">
+          {/* <label htmlFor="sort">
             <select name="sort" id="sort">
               <option value="weekly">Weekly</option>
               <option value="monthly">Monthly</option>
               <option value="yearly">Yearly</option>
             </select>
-          </label>
+          </label> */}
+          <Select data={["weekly", "monthly", "yearly"]} />
         </div>
       </div>
       {/* <Chart /> */}
@@ -51,30 +53,64 @@ export default function Sales() {
 
 export const Chart = () => {};
 
-export const Select = () => {
-  const [drop, setDrop] = useState(false);
-  const [dropValue, setDropValue] = useState("Connect");
-  const dropArray = useMemo(
-    () => ["Connect", "Inbox", "Capture", "AnonnHubs", "Privacy"],
-    []
-  );
+// export const Select = () => {
+//   const [drop, setDrop] = useState(false);
+//   const [dropValue, setDropValue] = useState("Connect");
+//   const dropArray = useMemo(
+//     () => ["Connect", "Inbox", "Capture", "AnonnHubs", "Privacy"],
+//     []
+//   );
+//   return (
+//     <>
+//       <div
+//         className="sales-select"
+//         onClick={(e) => {
+//           e.stopPropagation();
+//           drop ? setDrop(false) : setDrop(true);
+//         }}
+//       >
+//         <span>{dropValue}</span>
+//         <i className={`fa-solid fa-angle-down ${drop && "rotate"}`}></i>
+//       </div>
+//       <div className={`sales-options ${drop && "drop-index"}`}>
+//         {dropArray.map((data, i) => (
+//           <div className="sales-options-tab">{data}</div>
+//         ))}
+//       </div>
+//     </>
+//   );
+// };
+
+export const Select = ({ data }) => {
+  const [index, setIndex] = useState(0);
+  const [viewSet, setViewState] = useState(false);
+  useEffect(() => {
+    document.body.addEventListener("click", () => {
+      setViewState(false);
+    });
+  }, []);
+
   return (
-    <>
+    <div
+      className="select-container"
+      id={viewSet ? "show-option" : "hide-option"}
+    >
       <div
-        className="sales-select"
+        className="select"
         onClick={(e) => {
           e.stopPropagation();
-          drop ? setDrop(false) : setDrop(true);
+          setViewState(!viewSet);
         }}
       >
-        <span>{dropValue}</span>
-        <i className={`fa-solid fa-angle-down ${drop && "rotate"}`}></i>
+        <span>{data[index]}</span> <ArrowDown />
       </div>
-      <div className={`sales-options ${drop && "drop-index"}`}>
-        {dropArray.map((data, i) => (
-          <div className="sales-options-tab">{data}</div>
-        ))}
-      </div>
-    </>
+      {viewSet && (
+        <div className="select-option">
+          {data.map((item, i) => (
+            <span onClick={() => setIndex(i)}>{item}</span>
+          ))}
+        </div>
+      )}
+    </div>
   );
 };
