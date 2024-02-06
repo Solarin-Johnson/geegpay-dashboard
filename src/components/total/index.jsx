@@ -13,22 +13,22 @@ export default function Total() {
     {
       icon: "",
       name: "Total Refund",
-      amount: 200,
-      percentage: "23.5%",
+      amount: 350,
+      percentage: "32.5%",
       increase: false,
     },
     {
       icon: "",
       name: "Total Income",
-      amount: 200,
-      percentage: "23.5%",
+      amount: 1527,
+      percentage: "30.0%",
       increase: false,
     },
     {
       icon: "",
       name: "Average Sales",
-      amount: 200,
-      percentage: "23.5%",
+      amount: 720,
+      percentage: "20.5%",
       increase: true,
     },
   ];
@@ -53,7 +53,7 @@ export const TotalCard = ({ data, i }) => {
         <span>{(data.increase && <GraphSuccess />) || <GraphError />}</span>
       </div>
       <div className="total-card-name">{data.name}</div>
-      <div className="total-card-amount">{data.amount}</div>
+      <div className="total-card-amount">${data.amount}</div>
       <div className="total-card-details">
         <div className={data.increase ? "increase" : "decrease"}>
           <svg

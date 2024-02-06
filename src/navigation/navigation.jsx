@@ -77,7 +77,7 @@ export const Header = ({ title, date, name, email, width }) => {
               "expand-header"
             );
             e.currentTarget.parentElement.parentElement.parentElement.children[2].classList.toggle(
-              "expand-header"
+              "expand-container"
             );
             // e.currentTarget.parentElement.parentElement.parentElement.children[0].classList.toggle(
             //   "expand-menu"
@@ -87,7 +87,7 @@ export const Header = ({ title, date, name, email, width }) => {
           more_vert
         </span>
         <div className="header-title">
-          {width < 600 ? searchText.length < 1 && title : title}
+          {width < 700 ? searchText.length < 1 && title : title}
         </div>
         <div
           className={`header-search ${
@@ -139,6 +139,9 @@ export const ProfileCard = ({ name, email, width }) => {
 export const Menu = ({ width }) => {
   const [activeMenu, setActiveMenu] = useState(0);
   const [mode, setMode] = useState("light");
+  useEffect(() => {
+    document.body.classList.toggle("dark-mode");
+  }, [mode]);
 
   return (
     <div className="menu">

@@ -2,6 +2,7 @@
   --report-height: 350px;
 }
 .report {
+  color: var(--text);
   row-gap: 20px;
   &-container {
     display: grid;
@@ -15,7 +16,7 @@
   }
   &-card {
     font-weight: 500;
-    color: var(--text-color);
+    color: var(--text);
     height: 100px;
     border: 1px solid #7f7f7f40;
     border-radius: 10px;

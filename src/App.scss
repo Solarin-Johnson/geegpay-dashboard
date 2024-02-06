@@ -3,10 +3,11 @@ body {
   --fg-color: #f7f8fa;
   --alt-color: #f5f5f5;
   --accent: #ffffff;
+  --accent-alt: #ffffff;
   --text: #26282c;
   --text-alt: #9e9e9e;
   --primary: #34caa5;
-  --primary-trans: #34caa590;
+  --primary-trans: #34caa570;
   --secondary: #0d062d;
   --menu-color: #0d062dc9;
   --menu-color-alt: #b2abab;
@@ -14,23 +15,32 @@ body {
   --error: 237, 84, 78;
   --success-graph: #66c87b;
   --error-graph: #ed544e;
-
-  // Dark-mode
-
-  //   --bg-color: #fafafa;
-  //   --fg-color: #f7f8fa;
-  //   --accent: #ffffff;
-  //   --text: #26282c;
-  //   --text-alt: #9e9e9e;
-  //   --primary: #34caa5;
-  //   --secondary: #0d062d;
-  //   --menu-color: #d8d4e9ee;
-  // --menu-alt-color: #b2abab;
 }
 body.dark-mode {
+  // Dark-mode
+
+  --bg-color: #202020;
+  --fg-color: #181818;
+  --alt-color: #292929;
+  --accent: #191919b9;
+  --accent-alt: #00000090;
+  --text: #fafafa;
+  --text-alt: #9e9e9e;
+  --primary: #34caa5;
+  --primary-trans: #f5f5f5;
+  --secondary: #f5f5f5;
+  --menu-color: #d4d4d4;
+  --menu-color-alt: #656565;
+  --success: 52, 203, 165;
+  --error: 237, 84, 78;
+  --success-graph: #66c87b;
+  --error-graph: #ed544e;
 }
 
 body {
+  * {
+    transition: 0.2s ease-in-out background;
+  }
   margin: 0;
   background-color: var(--bg-color);
   max-width: 100vw;

@@ -18,6 +18,7 @@
   z-index: 100;
   left: 0;
   top: 0;
+  color: var(--text);
   height: var(--header-height);
   width: calc(100vw - var(--header-padding) - var(--header-left));
   padding: 0 var(--header-padding) 0 var(--header-left);
@@ -81,7 +82,7 @@
       border-color: transparent;
       &:hover {
         border-color: #7f7f7f40;
-        background-color: #fff;
+        background-color: var(--accent);
         min-width: 50px;
         width: 80%;
         padding: var(--search-padding);
@@ -208,8 +209,9 @@
   &-dropdown {
     grid-area: arrow;
     justify-self: center;
+    padding: 2px;
     padding-right: clamp(0px, 1.2vw, 8px);
-    cursor: pointer;
+    cursor: pointer !important;
   }
 }
 
@@ -297,7 +299,7 @@
     row-gap: 20px;
     width: 45px;
     border-radius: 10rem;
-    background-color: var(--accent);
+    background-color: var(--accent-alt);
     grid-template-rows: repeat(2, 1fr);
     padding: 15px 0;
     position: relative;
@@ -337,7 +339,8 @@
   &-menu {
     --menu-left: 0px;
   }
-  &-header {
+  &-header,
+  &-container {
     padding-left: 100px;
   }
 }
@@ -388,5 +391,13 @@
 @media screen and (max-width: 1074px) and (min-width: 920px) {
   :root {
     --search-width: 120px;
+  }
+}
+
+@media screen and (min-width: 920px) {
+  .expand {
+    &-header {
+      padding-left: 0px;
+    }
   }
 }
