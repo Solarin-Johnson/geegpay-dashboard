@@ -215,9 +215,9 @@ export const Menu = ({ width }) => {
 
 export const Notification = () => {
   const notifs = [
-    // "screenshot succesfully saved",
-    // "your income has increased by 17%",
-    // "reload the page tosee new updates",
+    "screenshot succesfully saved",
+    "your income has increased by 17%",
+    "reload the page tosee new updates",
   ];
   return (
     <div className="notyf-container">
@@ -229,3 +229,4 @@ export const Notification = () => {
     </div>
   );
 };
+

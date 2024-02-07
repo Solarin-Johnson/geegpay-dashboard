@@ -36,6 +36,8 @@
     div {
       display: grid;
       width: 35px;
+      animation: slide-up 0.9s;
+      transition: 0.9s ease-in-out;
       margin: 0 12px;
       border-top-right-radius: 10rem;
       border-top-left-radius: 10rem;
@@ -45,7 +47,7 @@
         transparent
       );
       opacity: 0.3;
-      transition: 0.2s ease-in-out;
+      transition: 0.5s ease-in-out;
       position: relative;
       &:hover {
         opacity: 1;
@@ -109,5 +111,11 @@
 @keyframes slide-down {
   to {
     margin-top: -5px;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    height: 0;
   }
 }
