@@ -112,6 +112,7 @@ export const Header = ({ title, date, name, email, width }) => {
       <div className="header-second">
         <div className="header-notification">
           <Bell />
+          <Notification />
         </div>
         <ProfileCard name={name} email={email} width={width} />
       </div>
@@ -208,6 +209,23 @@ export const Menu = ({ width }) => {
           i={8}
         />
       </div>
+    </div>
+  );
+};
+
+export const Notification = () => {
+  const notifs = [
+    // "screenshot succesfully saved",
+    // "your income has increased by 17%",
+    // "reload the page tosee new updates",
+  ];
+  return (
+    <div className="notyf-container">
+      {notifs.length < 1 ? (
+        <div className="notyf-empty">no notification available</div>
+      ) : (
+        notifs.map((data) => <div className="notyf-msg">{data}</div>)
+      )}
     </div>
   );
 };
