@@ -49,6 +49,7 @@
       display: grid;
       justify-content: space-between;
       grid-template-columns: repeat(2, auto);
+      column-gap: 10px;
       > :first-child {
         display: grid;
         grid-template-columns: repeat(2, auto);
