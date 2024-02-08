@@ -23,9 +23,11 @@
     display: grid;
     grid-auto-flow: column;
     align-items: last baseline;
-    // column-gap: 28px;
+    background-image: url("./line.svg");
+    // background-size: contain;
+    background-position-y: 0.5vw;
     justify-content: space-between;
-    padding: 15px 20px 5px;
+    padding: 0px 20px 5px;
     > :first-child {
       margin-left: 10px;
     }
@@ -47,7 +49,8 @@
         transparent
       );
       opacity: 0.3;
-      transition: 0.5s ease-in-out;
+      transition: 0.5s ease-in-out height;
+      transition: 0.2s ease-in-out;
       position: relative;
       &:hover {
         opacity: 1;
@@ -83,8 +86,8 @@
     text-align: right;
     font-weight: 500;
     align-items: center;
-    padding: 12px 3px 0;
-    margin-bottom: 20px;
+    align-content: space-between;
+    padding: 0px 3px 26px;
   }
   &-horiz {
     display: grid;
